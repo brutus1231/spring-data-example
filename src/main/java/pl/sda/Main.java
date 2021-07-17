@@ -1,6 +1,7 @@
 package pl.sda;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.sda.config.ApplicationConfiguration;
 import pl.sda.model.PersonEntity;
@@ -22,6 +23,8 @@ public class Main {
         personRepository.save(person3);
 
         personRepository.findAll().forEach(System.out::println);
+
+        ((ConfigurableApplicationContext)context).close();
     }
 
     private static PersonEntity createPerson(String firstName, String lastName, String pesel) {
