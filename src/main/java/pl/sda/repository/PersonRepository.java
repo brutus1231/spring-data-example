@@ -17,5 +17,13 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
     @Query(value = "select * from PERSON p where p.pesel like %:pesel% ", nativeQuery = true)
     PersonEntity findFirstByPeselContainsNative(@Param("pesel") String pesel);
 
+    @Query("select p from PersonEntity p where p.pesel = :pesel " +
+            " and p.department.name = :departmentName")
+    PersonEntity findFirstByPeselAndDepartment(@Param("pesel") String pesel,
+                                               @Param("departmentName") String departmentName);
 
+    @Query("select p from PersonEntity p join p.department d where p.pesel = :pesel " +
+            " and d.name = :departmentName")
+    PersonEntity findFirstByPeselAndDepartment2(@Param("pesel") String pesel,
+                                               @Param("departmentName") String departmentName);
 }
