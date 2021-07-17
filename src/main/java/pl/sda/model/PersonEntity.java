@@ -26,6 +26,9 @@ public class PersonEntity {
     @Column
     private String pesel;
 
+    @ManyToOne
+    @JoinColumn(name="department_id")
+    private DepartmentEntity department;
 
     @Override
     public String toString() {
