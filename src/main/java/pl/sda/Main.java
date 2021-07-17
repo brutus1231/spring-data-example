@@ -24,6 +24,8 @@ public class Main {
 
         personRepository.findAll().forEach(System.out::println);
 
+        System.out.println("findByPesel: " + personRepository.findFirstByPesel("83100213556"));
+
         ((ConfigurableApplicationContext)context).close();
     }
 

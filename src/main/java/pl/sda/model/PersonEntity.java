@@ -27,4 +27,13 @@ public class PersonEntity {
     private String pesel;
 
 
+    @Override
+    public String toString() {
+        return "PersonEntity{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pesel='" + pesel + '\'' +
+                '}';
+    }
 }
