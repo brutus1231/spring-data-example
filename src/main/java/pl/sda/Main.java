@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("findFirstByPeselContains: " + personRepository.findFirstByPeselContains("02135"));
 
-        System.out.println("findFirstByPeselContainsNative: " + personRepository.findFirstByPeselContains("60344"));
+        System.out.println("findFirstByPeselContainsNative: " + personRepository.findFirstByPeselContainsNative("60344"));
 
         //System.out.println("findFirstByPesel: " + personRepository.findFirstByPesel("83100213556"));
 
