@@ -9,10 +9,12 @@ import org.springframework.instrument.classloading.LoadTimeWeaver;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan("pl.sda")
 @EnableJpaRepositories("pl.sda.repository")
+@EnableTransactionManagement
 public class ApplicationConfiguration {
 
     @Bean
